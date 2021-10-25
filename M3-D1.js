@@ -1,6 +1,7 @@
 function ExerciseHeader(ExName){
     console.log("------- Exercise:",ExName,"-------")
 }
+
 /* 1. Create a function to calculate the sum of the two given integers. If the two values are the same, return triple their sum. */
 ExerciseHeader(1);
 function returnSum(input1,input2){
@@ -13,6 +14,7 @@ function returnSum(input1,input2){
 }
 returnSum(2,1);
 returnSum(2,2);
+
 /* 2. Create a function to check two given integers. Return `true` if one of them is 50 or if their sum is 50. */
 ExerciseHeader(2);
 function Identifyfifty(input1,input2){
@@ -81,6 +83,7 @@ function cloneString(copies,InputString){
     } 
 } 
 cloneString(6,'Bilal');
+
 /* 7. Create a function to display the city name if the string begins with "Los" or "New". 
     Pass the city name as a parameter. Return `false` if they start with a different string. */
 
@@ -104,10 +107,21 @@ function sumArray(x){
     console.log(threeElmenetsArray[0]+threeElmenetsArray[1]+threeElmenetsArray[2])
 }
 sumArray(threeElmenetsArray)
+
 /* 9. Create a function to test if an array of lenght 2 contains 1 OR 3. 
     Return `true` is it does, `false` if it doesn't. */
 ExerciseHeader(9)
-
+function findArray(input1,input2){
+    let array = [1,2]
+    if((array[0]==input1||array[1]==input1)||(array[0]==input2||array[1]==input2)){
+        console.log("founded")
+    }
+    else{
+        console.log("Not founded")
+    }
+    
+}
+findArray(1,3)
 /* 10. Create a function to test if an array of lenght 2 DOES NOT contain 1 or 3. 
     Return `true` if it doesn't, `false` if it does. */ 
 
