@@ -57,7 +57,19 @@ findLargest(1,2,3)
 
 /* 5. Create a function to check if two numbers are in the range 40-60 or 70-100. 
     Return `true` if they do, return `false` if one (or both) don't. */
-
+ExerciseHeader(5)
+function checkrange(input1,input2){
+    if(((input1>=40 && input1<=60)||(input1>=70 && input1<=100))&&((input2>=40 && input2<=60)||(input2>=70 && input2<=100))){
+        console.log(true)
+    }
+    else{
+        console.log(false)
+    }
+}
+checkrange(20,30)
+checkrange(50,50)
+checkrange(90,90)
+checkrange(50,90)
 
 /* 6. Create a function to create a new string composed of a specified number of copies of a given string. 
     Pass the string and the number of copies as parameters. */
