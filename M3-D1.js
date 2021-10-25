@@ -28,9 +28,9 @@ Identifyfifty(50,1);
 
 /* 3. Create a function to remove a character at a specified position from a given string: pass the position and the string as parameters, return the new string. */
 ExerciseHeader(3)
-function filterstring(InputPosition,InputString){
+function filterstring(InputPosition,Inputstring){
 // console.log(InputString.substr(InputPosition,InputString.length))
-console.log(InputString.substring(0, InputPosition - 1) + InputString.substring(InputPosition, InputString.length))
+console.log(Inputstring.substring(0, InputPosition - 1) + Inputstring.substring(InputPosition, Inputstring.length))
 }
 filterstring(4,'Str*iveSchool') //removes * from striveSchool
 
@@ -78,16 +78,17 @@ function cloneString(copies,InputString){
     console.log("Input string",'"',InputString,'"')
     for(let loop=1; loop<=copies;loop++){
         console.log(loop,"number copy of",InputString)
-    }  
-}
-ExerciseHeader(7)
-cloneString(6,'Bilal')
+    } 
+} 
+cloneString(6,'Bilal');
 /* 7. Create a function to display the city name if the string begins with "Los" or "New". 
     Pass the city name as a parameter. Return `false` if they start with a different string. */
-function cityName(InputString){
-    let firstThree = InputString.substring(0,3)
+
+ExerciseHeader(7)
+    function cityName(Inputstring){
+    let firstThree = Inputstring.substring(0,3)
     if(firstThree=='Los'||firstThree=='New'){
-        console.log(InputString)
+        console.log(Inputstring)
     }
     else{
         console.log(false)
@@ -97,11 +98,15 @@ cityName("NewYork")
 
 /* 8. Create a function to calculate and return the sum of all elements from an array with 3 elements. 
     Pass the array as a parameter. */
-
-
+ExerciseHeader(8)
+    let threeElmenetsArray =  [1,2,3]
+function sumArray(x){
+    console.log(threeElmenetsArray[0]+threeElmenetsArray[1]+threeElmenetsArray[2])
+}
+sumArray(threeElmenetsArray)
 /* 9. Create a function to test if an array of lenght 2 contains 1 OR 3. 
     Return `true` is it does, `false` if it doesn't. */
-
+ExerciseHeader(9)
 
 /* 10. Create a function to test if an array of lenght 2 DOES NOT contain 1 or 3. 
     Return `true` if it doesn't, `false` if it does. */ 
