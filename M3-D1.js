@@ -114,17 +114,29 @@ ExerciseHeader(9)
 function findArray(input1,input2){
     let array = [1,2]
     if((array[0]==input1||array[1]==input1)||(array[0]==input2||array[1]==input2)){
-        console.log("founded")
+        console.log(true)
     }
     else{
-        console.log("Not founded")
+        console.log(false)
     }
     
 }
 findArray(1,3)
+
 /* 10. Create a function to test if an array of lenght 2 DOES NOT contain 1 or 3. 
     Return `true` if it doesn't, `false` if it does. */ 
-
+    ExerciseHeader(10)
+    function findArray(){
+        let array = [1,2]
+        if((array[0]!=1&&array[1]!=1)||(array[0]!=3&&array[1]!=3)){
+            console.log(false)
+        }
+        else{
+            console.log(true)
+        }
+        
+    }
+    findArray()
 
 /* 11. Create a function to find the longest string from a given array of strings. 
     Pass the array as parameter and return the longest string. */ 
