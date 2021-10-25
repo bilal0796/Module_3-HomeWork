@@ -1,6 +1,18 @@
+function ExerciseHeader(ExName){
+    console.log("------- Exercise:",ExName,"-------")
+}
 /* 1. Create a function to calculate the sum of the two given integers. If the two values are the same, return triple their sum. */
-
-
+ExerciseHeader(1)
+function returnSum(input1,input2){
+    if(input1==input2){
+        console.log((input1+input2)*3)
+    }
+    else{
+        console.log(input1+input2)
+    }
+}
+returnSum(2,1);
+returnSum(2,2);
 /* 2. Create a function to check two given integers. Return `true` if one of them is 50 or if their sum is 50. */
 
 
