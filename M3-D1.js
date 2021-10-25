@@ -27,7 +27,12 @@ function Identifyfifty(input1,input2){
 Identifyfifty(50,1);
 
 /* 3. Create a function to remove a character at a specified position from a given string: pass the position and the string as parameters, return the new string. */
-
+ExerciseHeader(3)
+function filterstring(InputPosition,InputString){
+// console.log(InputString.substr(InputPosition,InputString.length))
+console.log(InputString.substring(0, InputPosition - 1) + InputString.substring(InputPosition, InputString.length))
+}
+filterstring(4,'Str*iveSchool') //removes * from striveSchool
 
 /* 4. Create a function to find and return the largest of three given integers. */
 
