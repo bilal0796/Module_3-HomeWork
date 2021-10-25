@@ -32,9 +32,13 @@ Identifyfifty(50,1);
 ExerciseHeader(3)
 function filterstring(InputPosition,Inputstring){
 // console.log(InputString.substr(InputPosition,InputString.length))
-console.log(Inputstring.substring(0, InputPosition - 1) + Inputstring.substring(InputPosition, Inputstring.length))
+//console.log(Inputstring.substring(0, InputPosition - 1) + Inputstring.substring(InputPosition, Inputstring.length))
+
+    return Inputstring.substring(0, InputPosition - 1) + Inputstring.substring(InputPosition, Inputstring.length)
+
 }
-filterstring(4,'Str*iveSchool') //removes * from striveSchool
+
+console.log(filterstring(4,'Str*iveSchool')) //removes * from striveSchool
 
 /* 4. Create a function to find and return the largest of three given integers. */
 ExerciseHeader(4)
@@ -125,18 +129,17 @@ findArray(1,3)
 
 /* 10. Create a function to test if an array of lenght 2 DOES NOT contain 1 or 3. 
     Return `true` if it doesn't, `false` if it does. */ 
-    ExerciseHeader(10)
-    function findArray(){
-        let array = [1,2]
+ExerciseHeader(10)
+function findArray(){
+    let array = [1,2]
         if((array[0]!=1&&array[1]!=1)||(array[0]!=3&&array[1]!=3)){
             console.log(false)
         }
         else{
             console.log(true)
         }
-        
     }
-    findArray()
+findArray()
 
 /* 11. Create a function to find the longest string from a given array of strings. 
     Pass the array as parameter and return the longest string. */ 
@@ -150,7 +153,22 @@ findArray(1,3)
 
     Pass the angle as a parameter.
 */
-
+ExerciseHeader(12)
+function typeofAngle(angle){
+    if(angle>0&&angle<90){
+        console.log("acute angle")
+    }
+    if(angle==90){
+        console.log("right")
+    }
+    if(angle>90&&angle<180){
+        console.log("obtuse angle")
+    }
+    if(angle==180){
+        console.log("straight")
+    }
+}
+typeofAngle(180)
 
 /* 13. Create a function to find and return the index of the greatest element of a given array of integers that you passed as a parameter. */
 
