@@ -144,16 +144,22 @@ findArray()
 /* 11. Create a function to find the longest string from a given array of strings. 
     Pass the array as parameter and return the longest string. */ 
 ExerciseHeader(11)
-let arrayStrings = ['CSS','Js']
-function findLongString(x){
-    if(arrayStrings[0].length>arrayStrings[1].length){
-        console.log("first index is greater than second")
+function findLargestStr(arr) {
+    let prevLength = 0;
+    let strFound = "";
+  
+    for (let i = 0; i < arr.length; i++) {
+      const str = arr[i];
+  
+      if (prevLength < str.length) {
+        prevLength = str.length;
+        strFound = str;
+      }
     }
-    else{
-        console.log("Second index is greater than first")
-    }
+    return strFound;
 }
-findLongString(arrayStrings)
+console.log(findLargestStr(["JavaScript", "CSS", "HTML"]));
+  
 /* 12. Create a function to find the types of a given angle:
   1. Acute angle ⇒ between 0 and 90 degrees. Return `acute`.
     2. Right angle ⇒ 90 degree. Return `right`
@@ -180,6 +186,23 @@ function typeofAngle(angle){
 typeofAngle(180)
 
 /* 13. Create a function to find and return the index of the greatest element of a given array of integers that you passed as a parameter. */
+ExerciseHeader(13)
+let MaxNumber = 0
+function findlargestNumber(array){
+    
+    for(let loop = 0 ; loop <= array.length; loop++){
+        let currentIndex = array[loop]
+        if(MaxNumber<currentIndex){
+            MaxNumber = currentIndex
+        }
+        
+    }
+    let indexNumber = array.indexOf(MaxNumber)
+    return indexNumber;
+    
+}
+// console.log(MaxNumber,"at index of",(findlargestNumber([100,200,300])))
+console.log("Index number:",findlargestNumber([100,200,300]), "for:",MaxNumber)
 
 
 /* 14. Create a function to find and return the largest **even** number from an array of integers that is passed a parameter. */
