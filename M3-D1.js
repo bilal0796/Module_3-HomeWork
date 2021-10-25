@@ -35,7 +35,25 @@ console.log(InputString.substring(0, InputPosition - 1) + InputString.substring(
 filterstring(4,'Str*iveSchool') //removes * from striveSchool
 
 /* 4. Create a function to find and return the largest of three given integers. */
-
+ExerciseHeader(4)
+function findLargest(integer1,integer2,integer3){
+    if(integer1==integer2&&integer2==integer3){
+        console.log("ALL THREE INOUTS ARE SAME")
+    }
+    else if(integer1>integer2&&integer1>integer3){
+        console.log(integer1,"is greater than",integer2, "and",integer3)
+    }
+    else if(integer2>integer1&&integer2>integer3){
+        console.log(integer2,"is greater than",integer1, "and",integer3)
+    }
+    else if(integer3>integer1&&integer3>integer2){
+        console.log(integer3,"is greater than",integer1, "and",integer2)
+    }
+}
+findLargest(1,1,1)
+findLargest(3,2,1)
+findLargest(2,3,1)
+findLargest(1,2,3)
 
 /* 5. Create a function to check if two numbers are in the range 40-60 or 70-100. 
     Return `true` if they do, return `false` if one (or both) don't. */
