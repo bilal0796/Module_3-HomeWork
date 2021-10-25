@@ -73,7 +73,14 @@ checkrange(50,90)
 
 /* 6. Create a function to create a new string composed of a specified number of copies of a given string. 
     Pass the string and the number of copies as parameters. */
-
+ExerciseHeader(6)
+function cloneString(copies,InputString){
+    for(let loop=1; loop<=copies;loop++){
+        console.log(loop,"number copy of",InputString)
+    }
+    console.log(InputString)
+}
+cloneString(1,'Bilal')
 
 /* 7. Create a function to display the city name if the string begins with "Los" or "New". 
     Pass the city name as a parameter. Return `false` if they start with a different string. */
