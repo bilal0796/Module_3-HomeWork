@@ -80,10 +80,20 @@ function cloneString(copies,InputString){
         console.log(loop,"number copy of",InputString)
     }  
 }
+ExerciseHeader(7)
 cloneString(6,'Bilal')
 /* 7. Create a function to display the city name if the string begins with "Los" or "New". 
     Pass the city name as a parameter. Return `false` if they start with a different string. */
-
+function cityName(InputString){
+    let firstThree = InputString.substring(0,3)
+    if(firstThree=='Los'||firstThree=='New'){
+        console.log(InputString)
+    }
+    else{
+        console.log(false)
+    }
+}
+cityName("NewYork")
 
 /* 8. Create a function to calculate and return the sum of all elements from an array with 3 elements. 
     Pass the array as a parameter. */
