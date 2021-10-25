@@ -206,7 +206,23 @@ console.log("Index number:",findlargestNumber([100,200,300]), "for:",MaxNumber)
 
 
 /* 14. Create a function to find and return the largest **even** number from an array of integers that is passed a parameter. */
-
+ExerciseHeader(14)
+function findLargeEven(array) {
+    let evenNumber = [];
+  
+    for (let loop = 0; loop < array.length; loop++) {
+      let arrayNumber = array[loop];
+  
+      if (arrayNumber % 2 === 0) {
+        evenNumber.push(arrayNumber);
+      }
+    }
+  
+    const largeNumIndex = findlargestNumber(array);
+    return evenNumber[largeNumIndex];
+    //return Math.max.apply(null, arr);
+  }
+  console.log(findLargeEven([3, 2, 6, 10, 14]));
 
 /* 15. Create a function to check from two given integers (passed as parameters) if one is positive and the other is negative. 
     Return `true` if that's the case, return `false` if it's not. */
