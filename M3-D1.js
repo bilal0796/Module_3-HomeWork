@@ -2,7 +2,7 @@ function ExerciseHeader(ExName){
     console.log("------- Exercise:",ExName,"-------")
 }
 /* 1. Create a function to calculate the sum of the two given integers. If the two values are the same, return triple their sum. */
-ExerciseHeader(1)
+ExerciseHeader(1);
 function returnSum(input1,input2){
     if(input1==input2){
         console.log((input1+input2)*3)
@@ -14,7 +14,17 @@ function returnSum(input1,input2){
 returnSum(2,1);
 returnSum(2,2);
 /* 2. Create a function to check two given integers. Return `true` if one of them is 50 or if their sum is 50. */
-
+ExerciseHeader(2);
+function Identifyfifty(input1,input2){
+    let sumTwoInputs=input1+input2;
+    if(input1==50||input2==50||sumTwoInputs==50){
+        console.log(true);
+    }
+    else{
+        console.log(false)
+    }
+}
+Identifyfifty(50,1);
 
 /* 3. Create a function to remove a character at a specified position from a given string: pass the position and the string as parameters, return the new string. */
 
