@@ -3,6 +3,6 @@ const dataWithAsync = async () => {
     let data = await response.json()    
     return data
 }
-let hello = async () => { return "Hello" };
 
-hello().then((data) => console.log(data))     // Hello
+
+dataWithAsync().then(data => console.log(data))
