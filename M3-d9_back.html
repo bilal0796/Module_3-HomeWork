@@ -102,7 +102,7 @@
         </button>
         <button type="submit" class="btn btn-warning mr-auto w-25">Save</button>
         <button type="submit" class="btn btn-warning mr-2 w-15">Edit</button>
-        <button type="submit" class="btn btn-warning mr-2 w-15">Delete</button>
+        <button type="submit" class="btn btn-warning mr-2 w-15" onclick="deleteDATA()">Delete</button>
       </div>
     </form>
   </div>
@@ -132,7 +132,16 @@
         .then((data) => callback(null, data))
         .catch((error) => callback(error, null));
     };
-
+    const deleteDATA = (product, callback) => {
+        fetch('https://striveschool-api.herokuapp.com/api/product/6183fdffea4ba500151275a6', {
+        headers,
+        method: "DELETE",
+        body: JSON.stringify(product),
+      })
+        .then((res) => res.json())
+        .then((data) => callback(null, data))
+        .catch((error) => callback(error, null));
+    };
     const formOnSubmit = function (e) {
       e.preventDefault();
       const name = document.querySelector("#name").value;
