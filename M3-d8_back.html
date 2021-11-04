@@ -16,9 +16,6 @@
     }
   </style>
   <!--
-          
-
-
             You are building the new Amazon.
             This time you are also responsible for the back office.
             THIS is you CRUD endpoint
@@ -59,60 +56,102 @@
 </head>
 
 <body>
-  <!-- Optional JavaScript; choose one of the two! -->
 
-  <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
   <nav class="navbar navbar-light">
     <a class="navbar-brand">
       <img src="./logo.png" height="36px" />
     </a>
-    <a class="text-light" href="M3-d8_back.html">Back Office</a>
+    <a class="text-light" href="/">Home</a>
   </nav>
   <div class="container">
-    <h1 class="mt-5">Products</h1>
+    <h1 id="page-title" class="mt-5">Add Product</h1>
     <hr />
-    <div class="card-columns"></div>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input required class="form-control" id="name" placeholder="Iphone 11" />
+      </div>
+
+      <div class="form-group">
+        <label for="brand">Brand</label>
+        <input required class="form-control" id="brand" placeholder="Apple" />
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input required type="number" class="form-control" id="price" placeholder="1€" />
+      </div>
+
+      <div class="form-group">
+        <label for="imageUrl">Image URL</label>
+        <input required class="form-control" id="imageUrl" value="http://placehold.it/300x400"
+          placeholder="http://placehold.it/300x400" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea required class="form-control" id="description" rows="3"></textarea>
+      </div>
+
+      <div class="form-group d-flex justify-content-end">
+        <button id="delete-btn" type="button" class="d-none btn btn-danger mr-auto w-25" onclick="deleteProduct()">
+          <ion-icon name="trash-outline"></ion-icon>
+        </button>
+        <button type="reset" class="btn btn-outline-dark mr-2 w-25">
+          Reset
+        </button>
+        <button type="submit" class="btn btn-warning mr-2 w-25">Save</button>
+      </div>
+    </form>
   </div>
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
     crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 
   <script>
-    const BASE_URL = "https://striveschool-api.herokuapp.com/api/product";
+    const BASE_URL = "https://striveschool-api.herokuapp.com/api/product/";
     const headers = new Headers({
       "Content-Type": "application/json",
       "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MTgyOGFhZGFhY2FhMjAwMTU1MmExNjciLCJpYXQiOjE2MzYwMzY2NTksImV4cCI6MTYzNzI0NjI1OX0.nZ0mtMxogZu82xu83KfjjCkhzKDSTSWDdb_1kgUsmVI",
     });
-    const getProducts = (callback) => {
-      fetch(BASE_URL, { headers })
+
+    const postProduct = (product, callback) => {
+      fetch(BASE_URL, {
+        headers,
+        method: "POST",
+        body: JSON.stringify(product),
+      })
         .then((res) => res.json())
         .then((data) => callback(null, data))
         .catch((error) => callback(error, null));
     };
-    window.onload = function () {
-      getProducts((error, data) => {
-        console.log(data, error)
-        if (error) {
-          console.log({ error });
+
+    const formOnSubmit = function (e) {
+      e.preventDefault();
+      const name = document.querySelector("#name").value;
+      const brand = document.querySelector("#brand").value;
+      const imageUrl = document.querySelector("#imageUrl").value;
+      const price = parseInt(document.querySelector("#price").value);
+      const description = document.querySelector("#description").value;
+      const product = { name, brand, imageUrl, price, description };
+      postProduct(product, (err, data) => {
+        if (err) {
+          alert(err.message)
         } else {
-          const content = document.querySelector(".card-columns");
-          content.innerHTML = "";
-          data.forEach((product) => {
-            content.innerHTML += `<div class="card">
-          <img src="${product.imageUrl}" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">${product.name}</h5>
-            <p class="card-text">
-               ${product.description}
-            </p>
-          </div>
-        </div>`;
-          });
+          e.target.reset();
+          window.location.replace("M3-d8.html");
         }
       });
+    };
+
+    window.onload = function () {
+      const form = document.querySelector("form");
+      form.onsubmit = formOnSubmit;
     };
   </script>
   <!-- Option 2: Separate Popper and Bootstrap JS -->
